@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap');
+
+:root{
+    --desktop:1200px;
+    --strong-cyan:hsl(171, 66%, 44%);/*#26baa4*/
+    --light-blue:hsl(233, 100%, 69%); /*	#6173ff*/
+    --dark-grayish-blue:hsl(210, 10%, 33%);
+    --grayish-blue:hsl(201, 11%, 66%);
+    --medium:400;
+    --bold:600;
+    --font-family:'Bai Jamjuree', sans-serif;
+    --cyan:hsl(171, 66%, 35%);
+    --blue:hsl(233, 100%, 60%);
+    --grayish:hsl(201, 11%, 95%);
+}
+body{
+    font-family:var(--font-family);
+    background: url("images/bg-header-mobile.png"), white;
+    background-repeat: no-repeat;
+    background-position: fixed;
+    background-size: 110vw;
+    width: 100vw;
+    min-height: 100vh;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    margin: auto;
+    text-align: center;
+    
+	
+}
+main{
+    
+    margin:auto;
+    width: 100vw;
+    margin-top: 5rem;
+}
+h1{
+    font-size: 1.8rem;
+    color: var(--dark-grayish-blue);
+}
+h2{
+    color: var(--dark-grayish-blue);
+    font-size: 1.5rem;
+}
+p{
+    color: var(--grayish-blue);
+    font-size: 1rem;
+}
+h3{
+    color: var(--dark-grayish-blue);
+}
+
+@media only screen and (min-width:1200px) {
+    main{
+        margin-top: 8rem;
+    }
+    h1{
+        font-size: 2.7rem;
+      }
+      p{
+        font-size: 1.14rem;
+      }
+      h2{
+        font-size: 2.1rem;
+      }
+      body{
+        width: 100vw;
+        font-family:var(--font-family);
+        background: url("images/bg-header-desktop.png"), white;
+        background-repeat: no-repeat;
+        background-position: fixed;
+        background-size: 110vw;
+      }
+}

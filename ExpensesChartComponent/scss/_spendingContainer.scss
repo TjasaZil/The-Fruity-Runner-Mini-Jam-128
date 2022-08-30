@@ -1,0 +1,141 @@
+
+hr{
+    background-color: $cream;
+    border:none;
+    height: 1px;
+    width: 310px;
+    @include desktop(){
+        width: 470px;
+    }
+   
+}
+#spending-container{
+    border-radius: 20px;
+    background-color: $very-pale-orange;
+    width:343px;
+    height:421px;
+    @include desktop(){
+        width: 511px;
+        height: 518px;
+    }
+}
+h1{
+    font-size: 1.6rem;
+    margin-top: 1.3rem;
+    margin-left: 1.2rem;
+    color: $dark-brown;
+    @include desktop(){
+        padding-top:2.3rem ;
+        padding-left: 1.1rem;
+        font-size: 1.9rem;
+    }
+}
+#chart-container{
+    color: $medium-brown;
+    @include flexStyle(row, center,center);
+   margin-top: 1rem;
+   margin: auto;
+   @include desktop(){
+    margin-top: 0.8rem;
+    width: 460px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 250px;
+   }
+   
+}
+
+#result-container{
+    @include flexStyle(row, space-between, center);
+    width: 303px;
+    margin:auto;
+    @include desktop(){
+        width: 460px;
+        margin-top: 1.5rem;
+    }
+}
+#total-container{
+    @include flexStyle(column, center, center);
+    p{
+        @include pStyle();
+        margin-bottom: -0.3rem;
+    }
+    span{
+        @include spanHover();
+        @include spanStyle(2rem);
+        @include desktop(){
+            font-size: 2.7rem;
+        }
+    }
+}
+#last-month-container{
+    @include flexStyle(column, center, center);
+    padding-top: 1.1rem;
+    @include desktop(){
+        padding-top: 2rem;
+    }
+    p{
+        @include pStyle();
+    }
+    span{
+        @include spanHover();
+        @include spanStyle(1rem);
+        margin-left: 4.5rem;
+        margin-bottom: -0.8rem;
+    }
+}
+.chart{
+    @include flexStyle(column, flex-end, center);
+   margin: auto;
+   height: 250px;
+   text-align: center;
+}
+#monday-chart{
+    @include chartStyle(50px);
+}
+#tuesday-chart{
+    @include chartStyle(100px);
+}
+#wednesday-chart{
+    @include chartStyle(150px);
+}
+#thursday-chart{
+    @include chartStyle(89px);
+}
+#friday-chart{
+    @include chartStyle(67px);
+}
+#saturday-chart{
+    @include chartStyle(124px);
+}
+#sunday-chart{
+    @include chartStyle(73px);
+}
+
+.money{
+    background-color: $dark-brown;
+    color: $cream;
+    text-align: center;
+    font-size: 0.7rem;
+    width: 40px;
+    height:25px;
+    border-radius: 5px;
+    margin: auto;
+    @include desktop(){
+        width: 55px;
+        height:30px;
+        font-size: 0.8rem;
+    }
+    &:hover{
+        cursor: pointer;
+        background-color: $soft-red;
+        transition: 0.7s;
+        transform: scale(1.05);
+    }    
+    p{
+        margin-top: 0.4rem;
+        margin-left: 0.4rem;
+    }
+}
+
+

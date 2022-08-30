@@ -1,0 +1,49 @@
+@mixin desktop(){
+    @media(min-width:$desktop){
+        @content;
+    
+    }
+}
+
+#text-container{
+    width: 327px;
+    height: 226px;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 30px;
+
+    @include desktop(){
+        width:525px;
+        text-align:left;
+        justify-content: center;
+       margin:auto;
+       
+        
+        
+        /*grid-area: 1/1/2/2;*/          
+        
+    }
+
+    h1{
+        font-size: 1.6rem;
+        font-weight: $very-bold;
+
+        @include desktop(){
+            font-size: 3.1rem;
+           margin-bottom: -5px; 
+           line-height: 4rem;
+           margin: auto;
+           
+            
+        }
+    }
+
+    p{
+        font-size: 1rem;
+        font-weight: $medium;
+
+        @include desktop(){
+            
+        }
+    }
+}

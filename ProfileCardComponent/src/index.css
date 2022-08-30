@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*body {
+  background: url(./assets/images/bg-pattern-top.svg),
+    url(./assets/images/bg-pattern-bottom.svg);
+  background-repeat: no-repeat;
+  background-position: 0% 1300%, 90% -1478%;
+}
+@media only screen and (min-width: 600px) {
+  body {
+    background-position: 400% -110%, -230% 230%;
+
+    /* -50% -100%, 130% 230%;
+  }
+}*/
+body {
+  background-image: url(./assets/images/bg-pattern-top.svg),
+    url(./assets/images/bg-pattern-bottom.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: right 52vw bottom 37vh, left 49vw top 50vh;
+  width: 100%;
+}

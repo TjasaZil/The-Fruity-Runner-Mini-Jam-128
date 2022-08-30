@@ -1,0 +1,57 @@
+@use "./function" as u;
+
+@mixin tablet(){
+    @media(min-width:$tablet){
+        @content;
+    }
+}
+@mixin desktop(){
+    @media(min-width:$desktop){
+        @content;
+    }
+} 
+
+#text-container{
+    width:u.rem(272);
+    height: u.rem(304);
+    
+
+    @include tablet(){
+        width: u.rem(520);
+        height: u.rem(225);
+        margin-top: u.rem(70);
+    }
+
+    @include desktop(){
+        text-align: left;
+        padding-left:u.rem(25);
+        padding-bottom: u.rem(250);
+        
+    }
+}
+h1{
+    font-family: $body;
+    font-family: $bold;
+    font-size: 1.5rem;
+
+    &:hover{
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    @include tablet(){
+        font-size: 2rem;
+    }
+    @include desktop(){
+        font-size: 2.7rem;
+    }
+}
+p{
+    font-family: $body;
+    font-size: 0.9rem;
+    line-height: 1.6rem;
+
+    @include tablet(){
+        font-size: 1.1rem;
+    }
+}

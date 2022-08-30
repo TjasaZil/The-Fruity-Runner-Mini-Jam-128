@@ -1,0 +1,47 @@
+@use "./function" as u;
+
+@mixin tablet(){
+    @media(min-width:$tablet){
+        @content;
+    }
+}
+@mixin desktop(){
+    @media(min-width:$desktop){
+        @content;
+    }
+}
+
+#social-media{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+    width: u.rem(104);
+    margin: auto;
+    margin-top: u.rem(60);
+
+    @include tablet(){
+        padding: u.rem(50);
+    }
+    @include desktop(){
+        margin-left: 80vw;
+        margin-top: u.rem(-35);
+    }
+    
+    img{
+        height:u.rem(48);
+
+        &:hover{
+            cursor: pointer;
+            animation: bop 0.7s linear;
+            animation-iteration-count: infinite;
+        }
+       
+    }
+    
+}
+
+@keyframes bop{
+    0%{transform: scale(1)};
+    100%{transform: scale(1.1)};
+}

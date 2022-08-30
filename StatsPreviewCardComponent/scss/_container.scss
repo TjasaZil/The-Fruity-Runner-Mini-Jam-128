@@ -1,0 +1,32 @@
+@mixin tablet(){
+    @media(min-width:$tablet){
+        @content;
+    }
+} 
+@mixin desktop(){
+    @media(min-width:$desktop){
+        @content;
+    }
+} 
+
+#container{
+background-color: $dark-desaturated-blue;
+height: 780px;
+width: 327px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: flex-start;
+border-radius: 10px;
+
+@include tablet(){
+    width: 600px;
+    height: 800px;
+}
+@include desktop(){
+    width: 1110px;
+    height:446px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+}

@@ -1,0 +1,368 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url("mobile.png") no-repeat center top fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: "IBM Plex Sans", sans-serif;
+  height: 100%;
+  width: 100%;
+}
+@media (min-width: 700px) {
+  body {
+    background-image: url("bg-main-tablet.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}
+@media (min-width: 950px) {
+  body {
+    background-image: url("bg-main-desktop.png");
+  }
+}
+
+#logo-header {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+@media (min-width: 700px) {
+  #logo-header {
+    margin-left: 50px;
+  }
+}
+@media (min-width: 1600px) {
+  #logo-header {
+    margin-left: 22%;
+  }
+}
+
+#header-img {
+  height: 350px;
+  visibility: hidden;
+  margin-bottom: -10000px;
+}
+@media (min-width: 700px) {
+  #header-img {
+    visibility: visible;
+    margin: -80px 65vw;
+  }
+}
+@media (min-width: 950px) {
+  #header-img {
+    margin-left: 75vw;
+    height: 500px;
+  }
+}
+
+#first-container {
+  width: 320px;
+  height: 327px;
+  margin: auto;
+  margin-top: 155px;
+  color: #191826;
+  z-index: 2;
+}
+@media (min-width: 700px) {
+  #first-container {
+    width: 500px;
+    margin-left: 50px;
+  }
+}
+@media (min-width: 950px) {
+  #first-container {
+    max-width: 1100px;
+    margin-left: 10%;
+    margin-top: -190px;
+  }
+}
+@media (min-width: 1600px) {
+  #first-container {
+    margin-left: 20%;
+  }
+}
+#first-container h1 {
+  word-spacing: -1px;
+  font-size: 40px;
+  font-weight: 700;
+  width: 70vw;
+  max-width: 1015px;
+}
+@media (min-width: 700px) {
+  #first-container h1 {
+    font-size: 50px;
+  }
+}
+@media (min-width: 950px) {
+  #first-container h1 {
+    font-size: 88px;
+  }
+}
+@media (min-width: 1600px) {
+  #first-container h1 {
+    font-size: 95px;
+  }
+}
+#first-container p {
+  margin-top: 22px;
+  font-size: 16px;
+  width: 60vw;
+  max-width: 825px;
+  line-height: 1.5rem;
+}
+@media (min-width: 950px) {
+  #first-container p {
+    font-size: 20px;
+    line-height: 1.7rem;
+    width: 100vw;
+  }
+}
+
+#container-images {
+  background: url(".assets/bg-pattern-2.svg"), #191826;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin: auto;
+  border-radius: 20px;
+  height: 550px;
+  margin-top: 270px;
+}
+@media (min-width: 700px) {
+  #container-images {
+    width: 90vw;
+    max-width: 1100px;
+  }
+}
+@media (min-width: 950px) {
+  #container-images {
+    height: 600px;
+    margin-top: 310px;
+  }
+}
+
+#back-img {
+  width: 400px;
+  height: 550px;
+  margin-left: 50px;
+  z-index: 1;
+  position: absolute;
+}
+@media (min-width: 700px) {
+  #back-img {
+    margin-left: 20%;
+  }
+}
+
+#phone-img {
+  width: 300px;
+  margin-left: 20%;
+  padding-bottom: 20px;
+  margin-top: -140px;
+  z-index: 100;
+  position: absolute;
+}
+@media (min-width: 700px) {
+  #phone-img {
+    width: 250px;
+    margin-left: 10%;
+  }
+}
+@media (min-width: 950px) {
+  #phone-img {
+    margin-left: 7%;
+    width: 330px;
+    margin-top: -15vh;
+  }
+}
+
+#second-container {
+  background-color: #fa7453;
+  margin: auto;
+  border-radius: 20px;
+  margin-top: -30px;
+  z-index: 4;
+  position: absolute;
+  width: 97vw;
+}
+@media (min-width: 700px) {
+  #second-container {
+    width: 400px;
+    margin-left: 35%;
+    margin-top: -420px;
+    z-index: 400;
+  }
+}
+@media (min-width: 950px) {
+  #second-container {
+    margin-left: 52%;
+    margin-top: -470px;
+  }
+}
+@media (min-width: 1600px) {
+  #second-container {
+    width: 450px;
+  }
+}
+#second-container h2 {
+  color: #fcfaf9;
+  font-size: 40px;
+  font-weight: 700;
+  margin-left: 15%;
+  padding-top: 40px;
+}
+#second-container p {
+  color: #fcfaf9;
+  margin-top: 20px;
+  font-size: 16px;
+  margin-left: 15%;
+  width: 350px;
+  line-height: 1.5rem;
+  font-weight: 400;
+}
+@media (min-width: 700px) {
+  #second-container p {
+    width: 22vw;
+    padding-top: 10px;
+  }
+}
+@media (min-width: 700px) and (min-width: 1600px) {
+  #second-container p {
+    width: 18vw;
+  }
+}
+#second-container #money {
+  color: #fcfaf9;
+  margin-left: 75px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+#second-container #money span {
+  font-weight: 700;
+  font-size: 70px;
+}
+
+#buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 30px;
+}
+#buttons #apple-btn {
+  background-color: #191826;
+  color: #fcfaf9;
+  width: 80%;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 18px;
+  font-weight: 700;
+}
+#buttons #apple-btn:hover {
+  cursor: pointer;
+  background-color: #66e2dc;
+  color: #191826;
+  font-weight: 700;
+}
+#buttons #android-btn {
+  background-color: #fcfaf9;
+  color: #191826;
+  width: 80%;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 18px;
+  font-weight: 700;
+}
+#buttons #android-btn:hover {
+  cursor: pointer;
+  background-color: #ffb964;
+  color: #191826;
+  font-weight: 700;
+}
+@media (min-width: 950px) {
+  #buttons #android-btn {
+    margin-bottom: 30px;
+  }
+}
+
+footer {
+  width: 90vw;
+  margin-top: 540px;
+  z-index: 7;
+  position: absolute;
+}
+@media (min-width: 700px) {
+  footer {
+    margin-top: 200px;
+    padding-top: 100px;
+    z-index: -1;
+    width: 100%;
+    margin-left: 5vw;
+  }
+}
+@media (min-width: 700px) and (min-width: 950px) {
+  footer {
+    margin-left: 15vw;
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+  }
+}
+@media (min-width: 700px) and (min-width: 1600px) {
+  footer {
+    margin-left: 22vw;
+  }
+}
+footer #logo-footer {
+  margin-left: 30px;
+}
+@media (min-width: 950px) {
+  footer #logo-footer {
+    height: 40px;
+    margin-top: 50px;
+  }
+}
+footer p {
+  margin-top: 40px;
+  width: 290px;
+  margin-left: 20px;
+}
+@media (min-width: 700px) {
+  footer p {
+    width: 350px;
+  }
+}
+@media (min-width: 950px) {
+  footer #text {
+    margin-left: 4vw;
+  }
+}
+footer span {
+  font-weight: 700;
+}
+footer #social-media {
+  margin-top: 50px;
+  padding-bottom: 30px;
+}
+footer #social-media:hover {
+  cursor: pointer;
+}
+@media (min-width: 950px) {
+  footer #social-media {
+    padding-left: 10vw;
+  }
+}
+footer #social-media img {
+  margin-left: 8px;
+  width: 25px;
+}/*# sourceMappingURL=main.css.map */

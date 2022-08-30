@@ -1,0 +1,38 @@
+@mixin tablet(){
+    @media(min-width:$tablet){
+        @content;
+    }
+} 
+@mixin desktop(){
+    @media(min-width:$desktop){
+        @content;
+    }
+} 
+#statistics{
+
+    @include tablet(){
+       
+        display: grid;
+        grid-template-columns: 100px 100px 100px;
+        grid-template-rows: 1fr;
+       
+        text-align: left;
+        column-gap: 60px;
+    
+    }
+    @include desktop(){
+        column-gap: 48px;
+        margin-top: 60px;
+    }
+    
+    h2{
+        &:hover{
+            color: $soft-viola;
+            cursor: pointer;
+        }
+    }
+    p{
+        text-transform: uppercase;
+    }
+}
+

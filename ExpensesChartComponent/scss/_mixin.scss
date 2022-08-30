@@ -1,0 +1,55 @@
+@mixin desktop(){
+    @media(min-width:$desktop){
+        @content;
+    }
+}
+
+@mixin flexStyle($direction, $justify, $align){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-self: $align;
+}
+
+@mixin chartStyle($height){
+   background-color: $soft-red;
+    width: 33px;
+    height: $height;
+    border: none;
+    border-radius: 5px;
+    &:hover{
+        
+        cursor: pointer;
+        transform: scale(1.1);
+        transition: 0.7s;
+        background-color: $cyan;
+        opacity: 0.7;
+    }
+    @include desktop(){
+       width: 50px;
+    }
+}
+
+@mixin spanHover(){
+    &:hover{
+        color: $soft-red;
+        cursor: pointer;
+        text-decoration: line-through;
+        transition: 0.7s;
+        transform: scale(1.05);
+    }
+}
+
+@mixin spanStyle($font-size){
+    font-size: $font-size;
+        font-weight: $bold;
+        color: $dark-brown;
+}
+
+@mixin pStyle(){
+    color: $medium-brown;
+    font-size: 1rem;
+    @include desktop(){
+        font-size: 1.05rem;
+    }
+}

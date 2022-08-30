@@ -1,0 +1,45 @@
+@mixin desktop(){
+    @media(min-width:$desktop){
+        @content;
+    
+    }
+}
+body{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url("/images/bg-intro-mobile.png"), $red;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height:100%;
+    
+    font-family: $font-family;
+    color: white;
+    @include desktop(){
+        background: url("/images/bg-intro-desktop.png"), $red;
+        background-size: cover;
+        background-repeat: no-repeat; 
+        height:100%;     
+        overflow: auto;  
+        
+    }
+  
+
+}
+main{
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+   @include desktop(){
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 50px;
+        
+   }
+}
+
+*{
+    box-sizing: border-box;
+}

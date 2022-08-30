@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="scss/main.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+    </style>
+  <title>Frontend Mentor | Expenses chart component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <main>
+    <div id="my-balance-container">
+      <div id="my-balance-text">
+        <div id="balance">
+       <p>My balance</p>
+       <span>$921.48</span> 
+        </div>
+      </div>
+        <img src="images/logo.svg" alt="a black circle and a circle with white border logo" id="logo">
+    </div>
+   
+  <div id="spending-container">
+    <h1>Spending - Last 7 days</h1>
+  <div id="chart-container">
+
+    <div class="chart monday">
+      <div class="money" id="monday"><p>$17.45</p></div>
+      <div id="monday-chart"></div>
+      <p>mon</p>
+    </div>
+    <div class="chart tuesday">
+      <div class="money" id="tuesday"><p>$34.91</p></div>
+      <div id="tuesday-chart"></div>
+      <p>tue</p>
+    </div>
+    <div class="chart wednesday">
+      <div class="money" id="wednesday"><p>$52.36</p></div>
+      <div id="wednesday-chart"></div>
+      <p>wed</p>
+    </div>
+    <div class="chart thursday">
+      <div class="money" id="thursday"><p>$31.07</p></div>
+      <div id="thursday-chart"></div>
+      <p>thu</p>
+    </div>
+    <div class="chart friday">
+      <div class="money" id="friday"><p>$23.39</p></div>
+      <div id="friday-chart"></div>
+      <p>fri</p>
+    </div>
+    <div class="chart saturday">
+      <div class="money" id="saturday"><p>$43.28</p></div>
+      <div id="saturday-chart"></div>
+      <p>sat</p>
+    </div>
+    <div class="chart sunday">
+      <div class="money" id="sunday"><p>$25.48</p></div>
+      <div id="sunday-chart"></div>
+      <p>sun</p>
+    </div>
+  </div>
+   <hr>
+  <div id="result-container">
+    <div id="total-container">
+      <p>Total this month</p>
+      <span>$478.33</span>
+    </div>
+      <div id="last-month-container">
+        <span>+2.4%</span>
+        <p> from last month</p>
+    </div>
+  </div>
+   
+  </div>
+  </main>
+ 
+
+</body>
+<script src="script.js"></script>
+</html>

@@ -1,0 +1,36 @@
+@use "./function" as u;
+
+@mixin tablet(){
+    @media(min-width:$tablet){
+        @content;
+    }
+}
+
+button{
+    height: u.rem(40);
+    width: u.rem(200);
+    border:none;
+    border-radius: u.rem(30);
+    color: $violet;
+    margin-top: u.rem(20);
+    
+
+    &:hover{
+        cursor: pointer;
+        background-color: $soft-magenta;
+        color: white;
+        animation: button-down 0.7s linear;
+        animation-iteration-count: infinite;
+    }
+
+    @include tablet(){
+        height: u.rem(56);
+        font-size: 1rem;
+        margin-top: u.rem(12);
+    }
+}
+
+@keyframes button-down{
+    0%{transform:scale(1)};
+    100%{transform: scale(0.9)};
+}

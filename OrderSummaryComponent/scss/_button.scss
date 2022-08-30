@@ -1,0 +1,60 @@
+@mixin desktop(){
+    @media(min-width:$desktop){
+        @content;
+    
+    }
+}
+
+button{
+    background-color: $bright-blue;
+    color: white;
+    font-size: 1rem;
+    font-family: $font-family;
+    font-weight: $medium;
+    border-radius: 1rem;
+    height: 50px;
+    width: 279px;
+    border: none;
+    margin: auto;
+
+    -webkit-box-shadow: 10px 10px 42px -7px rgba(56,41,224,0.36);
+    -moz-box-shadow: 10px 10px 42px -7px rgba(56,41,224,0.36);
+    box-shadow: 10px 10px 42px -7px rgba(56,41,224,0.36);
+
+    &:hover{
+        cursor: pointer;
+        color: $bright-blue;
+        background-color: $very-pale-blue;
+        animation: bop 0.7s linear;
+        animation-iteration-count: infinite;
+        
+    }
+
+    @include desktop(){
+        width: 354px;
+
+    }
+}
+
+@keyframes bop{
+    0%{transform:scale(0.9)};
+    50%{transform:scale(1)};
+    100%{transform:scale(0.9)};
+}
+
+#cancel{
+    color: $desaturated-blue;
+    font-weight: $bold;
+    margin: 0.5rem auto;
+    font-size: 1rem;
+    font-family: $font-family;
+
+    &:hover{
+        cursor: pointer;
+        color: $dark-blue;
+        text-decoration: underline;
+        transform: scale(1.1);
+    }
+
+    
+}

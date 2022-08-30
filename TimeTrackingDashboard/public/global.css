@@ -1,0 +1,328 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+
+:root {
+  --thin: 300;
+  --medium: 400;
+  --thicc: 500;
+  --font-family: "Rubik", sans-serif;
+  --light-orange: hsl(15, 100%, 70%);
+  --blue: hsl(195, 74%, 62%);
+  --soft-red: hsl(348, 100%, 68%);
+  --lime-green: hsl(145, 58%, 55%);
+  --violet: hsl(264, 64%, 52%);
+  --soft-orange: hsl(43, 84%, 65%);
+  --very-dark-blue: hsl(226, 43%, 10%);
+  --dark-blue: hsl(235, 46%, 20%);
+  --desaturated-blue: hsl(235, 45%, 61%);
+  --pale-blue: hsl(236, 100%, 87%);
+  --des-blue: hsl(243, 44%, 54%);
+}
+
+body {
+  background-color: var(--very-dark-blue);
+  height: 100vh;
+  width: 100vw;
+  font-family: var(--font-family);
+}
+
+main {
+  width: 70vw;
+  margin: auto;
+  align-self: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5rem;
+}
+
+.buttons-container {
+  /*min-width: 327px;*/
+  height: 203px;
+  width: 70vw;
+  border-radius: 20px;
+  background-color: var(--dark-blue);
+}
+.another-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 255px;
+  height: 64px;
+}
+.profile-picture {
+  width: 64px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  margin: auto;
+  width: 172px;
+  height: 50px;
+}
+.profile-container {
+  height: 133px;
+  /*min-width: 327px;*/
+  width: 70vw;
+  background-color: var(--des-blue);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.p-text-container {
+  color: var(--pale-blue);
+  font-size: 1rem;
+  font-weight: var(--thin);
+}
+.header-text-container {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: var(--thin);
+  margin-top: -0.6rem;
+}
+button {
+  border: none;
+  background-color: transparent;
+  color: var(--pale-blue);
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-family: var(--font-family);
+  font-weight: var(--thin);
+}
+button:focus {
+  color: white;
+  font-weight: var(--medium);
+}
+button:hover {
+  cursor: pointer;
+  color: white;
+  font-weight: var(--medium);
+}
+.statistics-container:hover{
+  cursor: pointer;
+}
+.container:hover{
+  background-color: var(--desaturated-blue);
+}
+.id-buttons {
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  margin: 1.5rem 1.3rem;
+}
+.background-container {
+  border-radius: 20px;
+  height: 160px;
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.container {
+  height: 122px;
+  width: 70vw;
+  border-radius: 20px;
+  background-color: var(--dark-blue);
+}
+.elipsis-icon {
+  width: 21px;
+  margin-top: 1.5rem;
+  margin-right: 0.5rem;
+}
+h1 {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: var(--thin);
+  margin-bottom: -0.7rem;
+}
+.container p {
+  color: white;
+  font-size: 1.7rem;
+  font-weight: var(--thin);
+}
+
+.outer-container {
+  display: grid;
+  width: 70vw;
+  justify-items: center;
+  align-items: center;
+  row-gap: 2rem;
+  margin: auto;
+  margin-top: 2rem;
+}
+.text {
+  color: var(--pale-blue);
+  font-size: 1rem;
+  font-weight: var(--thin);
+}
+.grid-container {
+  min-width: 279px;
+  width: 65vw;
+  height: 66px;
+  padding: 1rem;
+}
+.container-one,
+.container-two {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.container-one h1 {
+  font-weight: var(--bold);
+}
+
+@media only screen and (min-width: 800px) {
+  .outer-container {
+    width: 70vw;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-self: center;
+    align-self: center;
+    column-gap: 1.3rem;
+  }
+  .statistics-container {
+    min-width: 200px;
+    width: 34vw;
+  }
+  .grid-container {
+    min-width: 190px;
+    width: 30vw;
+  }
+  .container {
+    min-width: 200px;
+    width: 34vw;
+  }
+  .background-container {
+    min-width: 200px;
+    width: 34vw;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  main {
+    height: 518px;
+    width: 1140px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 255px 1fr;
+    margin: auto;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .grid-container {
+    width: 255px;
+    height: 199px;
+  }
+  .buttons-container {
+    width: 255px;
+    height: 518px;
+    margin-top: -2.5rem;
+  }
+  .profile-container {
+    height: 354px;
+    max-width: 255px;
+  }
+
+  .profile-picture {
+    height: 78px;
+    width: 78px;
+    margin-right: 2.5rem;
+    margin-top: 0.7rem;
+  }
+  .text-container {
+    margin-bottom: 6.5rem;
+    margin-left: 5rem;
+  }
+  .another-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 255px;
+    height: 300px;
+    margin-right: 5rem;
+  }
+  .id-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 225px;
+    text-align: left;
+    margin-top: 0.55rem;
+  }
+  button {
+    margin-top: 1.1rem;
+    text-align: left;
+    width: 225px;
+    margin-left: 1rem;
+    font-size: 1.15rem;
+  }
+
+  .statistics-container,
+  .background-container {
+    height: 242px;
+    width: 255px;
+  }
+  .container {
+    height: 199px;
+    width: 255px;
+  }
+
+  .outer-container {
+    width: 800px;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-self: center;
+    align-items: center;
+    column-gap: 2rem;
+    margin-bottom: 2rem;
+    margin-top: auto;
+    margin-top: -0.5rem;
+  }
+  .header-text-container {
+    font-size: 2.2rem;
+  }
+  .container-two {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 125px;
+    height: 92px;
+    text-align: left;
+    margin-left: 0.8rem;
+  }
+  .container-one {
+    width: 195px;
+    height: 22px;
+    margin-left: 1rem;
+  }
+  .container-two p {
+    font-size: 3.3rem;
+    margin-top: 2.4rem;
+  }
+  .text {
+    font-size: 0.9rem;
+    margin-top: -2.5rem;
+  }
+}

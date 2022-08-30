@@ -1,0 +1,171 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(217deg, 54%, 11%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 100%;
+  color: white;
+  font-family: "Outfit", sans-serif;
+}
+
+main {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+#main-container {
+  width: 327px;
+  height: 543px;
+  border-radius: 10px;
+  background-color: hsl(216deg, 50%, 16%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@media (min-width: 600px) {
+  #main-container {
+    height: 596px;
+    width: 350px;
+  }
+}
+
+#eth-img {
+  width: 285px;
+  position: relative;
+  border-radius: 10px;
+}
+#eth-img:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+@media (min-width: 600px) {
+  #eth-img {
+    width: 305px;
+  }
+}
+
+#overlay {
+  margin-top: 50px;
+  margin-bottom: 10px;
+  width: 285px;
+  height: 283px;
+  position: relative;
+  border-radius: 10px;
+}
+#overlay:hover {
+  background-color: hsl(178deg, 100%, 50%);
+  opacity: 0.5;
+  background-image: url("/images/icon-view.svg");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transform: rotate(360deg);
+  transition-duration: 1s;
+}
+@media (min-width: 600px) {
+  #overlay {
+    margin-top: 12px;
+    width: 305px;
+    height: 302px;
+  }
+}
+
+#text-container {
+  padding-bottom: 5px;
+  width: 265px;
+  align-items: center;
+  justify-content: center;
+}
+@media (min-width: 600px) {
+  #text-container {
+    width: 300px;
+    margin-top: 10px;
+  }
+}
+#text-container h1 {
+  font-size: 1.4rem;
+  margin-top: -5px;
+}
+#text-container h1:hover {
+  color: hsl(178deg, 100%, 50%);
+  cursor: pointer;
+}
+#text-container p {
+  font-weight: 300;
+  line-height: 1.6rem;
+  color: hsl(215deg, 51%, 70%);
+  font-size: 1.1rem;
+}
+
+#numbers-container, #eth-container, #days-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#numbers-container img, #eth-container img, #days-left img {
+  height: 20px;
+}
+
+#eth-container p {
+  font-size: 1rem;
+  color: hsl(178deg, 100%, 50%);
+  font-weight: 600;
+  margin-left: 8px;
+}
+
+#days-left {
+  margin-left: 50px;
+}
+@media (min-width: 800px) {
+  #days-left {
+    margin-left: 100px;
+  }
+}
+#days-left p {
+  font-size: 1rem;
+  margin-left: 8px;
+  font-weight: 400;
+}
+
+#numbers-container {
+  margin-top: -10px;
+}
+
+span {
+  font-weight: 600;
+  color: white;
+}
+span:hover {
+  cursor: pointer;
+  color: hsl(178deg, 100%, 50%);
+}
+
+#creator-container { /*
+border-top: 1px solid $soft-blue;*/
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: -5px;
+}
+#creator-container img {
+  height: 30px;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+#creator-container p {
+  margin-left: 25px;
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+}
+
+hr {
+  opacity: 0.1;
+  color: hsl(215deg, 51%, 70%);
+}/*# sourceMappingURL=main.css.map */

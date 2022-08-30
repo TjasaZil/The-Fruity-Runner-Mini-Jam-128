@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+*:focus {
+    /* no focus border on input and other elements*/
+    outline: none;
+  }

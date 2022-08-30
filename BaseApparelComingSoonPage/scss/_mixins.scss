@@ -1,0 +1,16 @@
+@mixin flexStyle($direction, $align, $justify){
+    display: flex;
+    flex-direction: $direction;
+    align-self: $align;
+    justify-content: $justify;
+}
+@mixin desktop(){
+    @media(min-width:$desktop){
+        @content;
+    }
+}
+@mixin tablet(){
+    @media(min-width:$tablet){
+        @content;
+    }
+}

@@ -1,0 +1,56 @@
+@mixin tablet(){
+    @media(min-width:$tablet){
+        @content;
+    }
+} 
+@mixin desktop(){
+    @media(min-width:$desktop){
+        @content;
+    }
+} 
+
+#text{
+    width: 294px;
+    font-family: $inter;
+
+    @include tablet(){
+        width: 400px;
+    }
+    @include desktop(){
+        margin: auto;
+        text-align: left;
+    }
+
+    h1{
+        font-size: 1.8rem;
+        font-weight: $bold;
+        @include tablet(){
+            font-size:2.1rem;
+        }
+    }
+    span{
+        color: $soft-viola;
+
+        &:hover{
+            color: $slightly-transparent-white;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+    }
+    p{
+        font-family: $lexend;
+        font-weight: $medium;
+        width: 264px;
+        margin: auto;
+        font-size: 0.9rem;
+        line-height: 1.5rem;
+
+        @include tablet(){
+            width: 400px;
+        }
+
+        @include desktop(){
+            width: 374px;
+        }
+    }
+}
