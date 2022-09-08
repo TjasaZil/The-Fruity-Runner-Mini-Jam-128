@@ -22,7 +22,8 @@
             <img src="@/assets/images/icon-email.svg" class="w-5 h-4" />
             <p class="ml-5">example@fylo.com</p>
           </div>
-          <div class="text-left w-80 mx-auto flex flex-col capitalize">
+          <div class="text-left w-80 mx-auto flex flex-col capitalize xl:w-auto xl:flex-row">
+            <div>
             <h3>About Us</h3>
             <ul>
               <li>jobs</li>
@@ -37,6 +38,7 @@
               <li>Privacy</li>
             </ul>
           </div>
+        </div>
           <div class="flex flex-row mx-auto w-28 h-7 justify-evenly">
             <img class="icons" src="@/assets/images/facebook.png" />
             <img class="icons" src="@/assets/images/twitter.png" />
