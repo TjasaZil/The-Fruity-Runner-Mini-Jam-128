@@ -6,6 +6,7 @@ import {
   Dead,
   Hit,
 } from "./playerStates.js";
+import { CollisionAnimation } from "./collisionAnimation.js";
 
 class Player {
   constructor(game) {
@@ -98,6 +99,13 @@ class Player {
       ) {
         this.setState(5, 0);
         enemy.markedForDeletion = true;
+        this.game.collisions.push(
+          new CollisionAnimation(
+            this.game,
+            enemy.x + enemy.width * 0.5,
+            enemy.y + enemy.height * 0.5
+          )
+        );
         this.enemyAudio.play();
         this.enemyAudio.volume = 0.05;
         this.game.score--;

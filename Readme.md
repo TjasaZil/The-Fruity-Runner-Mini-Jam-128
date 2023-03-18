@@ -6,6 +6,8 @@
 
 This is a simple runner game that I made for the mini game jam 128 hosted on itch.io. The game jam was held from March 17th 2023 at 5:00 AM to March 20th 2023 at 5:00 AM. It is a short game that I plan to expand in the future.
 
+The objective of the game is to pick up healthy snacks in order to keep your health high. Once the health counter hits 0 the game ends. The game uses arrow keys as controls.
+
 ## art:
 
 - Backgrounds & main music - [infinite runner pack by Eder Muniz](https://edermunizz.itch.io/infinite-runner)<br>
