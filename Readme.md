@@ -2,6 +2,9 @@
 
 - theme: health
 - limitation: The only way to go is up
+- made with: HTML5, Canvas, SCSS and Vanilla JS
+
+This is a simple runner game that I made for the mini game jam 128 hosted on itch.io. The game jam was held from March 17th 2023 at 5:00 AM to March 20th 2023 at 5:00 AM. It is a short game that I plan to expand in the future.
 
 ## art:
 

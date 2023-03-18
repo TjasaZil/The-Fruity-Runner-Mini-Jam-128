@@ -38,28 +38,28 @@ class Background {
       this.game,
       this.width,
       this.height,
-      0.5,
+      0.1,
       this.layerForest1
     );
     this.layer2 = new Layer(
       this.game,
       this.width,
       this.height,
-      0.6,
+      0.3,
       this.layerForest2
     );
     this.layer3 = new Layer(
       this.game,
       this.width,
       this.height,
-      0.7,
+      0.5,
       this.layerForest3
     );
     this.layer4 = new Layer(
       this.game,
       this.width,
       this.height,
-      0.85,
+      0.7,
       this.layerForest4
     );
     this.layer5 = new Layer(
