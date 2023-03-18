@@ -96,10 +96,10 @@ class Player {
         enemy.y < this.y + this.height &&
         enemy.y + enemy.height > this.y
       ) {
+        this.setState(5, 0);
         enemy.markedForDeletion = true;
         this.enemyAudio.play();
         this.enemyAudio.volume = 0.05;
-        this.setState(5, 0);
         this.game.score--;
       }
     });

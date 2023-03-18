@@ -18,3 +18,7 @@ This is a simple runner game that I made for the mini game jam 128 hosted on itc
 - Food - [Food and kitchenware by Poloviinkin](https://poloviiinkin.itch.io/food) - [license](https://creativecommons.org/licenses/by-sa/4.0/deed.ru)
 - Heart icon - [Hearts and health bar by VampireGirl](https://fliflifly.itch.io/hearts-and-health-bar) - [itch.io](https://fliflifly.itch.io/)
 - Sound Effects - [8-bit / 16-bit Sound Effects by DJWasabi](https://jdwasabi.itch.io/8-bit-16-bit-sound-effects-pack)<br> You can listen to more of their music on [dswasabi.com](https://www.jdwasabi.com/) or follow them on [Twitter](https://twitter.com/JDWasabi)
+
+- Effects - [VFX starter pack by Leonardo Zavala Cuevas](https://sangoro.itch.io/vfx-starter-pack)<br>
+  [license](https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1)<br>
+  For more assets you can visit their [itch.io](https://sangoro.itch.io/) and [Twitter](https://twitter.com/Sangoro2). Feel free to buy them a [ko-fi](https://ko-fi.com/sangoro2) and support their art.

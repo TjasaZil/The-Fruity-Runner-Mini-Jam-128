@@ -111,6 +111,7 @@ class Hit extends State {
     this.game.player.frameY = 6;
   }
   handleInput(input) {
+    console.log("Hit state handleInput() called");
     if (this.game.player.frameX >= 1 && this.game.player.onGround()) {
       this.game.player.setState(states.RUNNING, 1);
     } else if (this.game.player.frameX >= 1 && !this.game.player.onGround()) {
