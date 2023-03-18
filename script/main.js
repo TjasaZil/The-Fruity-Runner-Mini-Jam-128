@@ -27,7 +27,8 @@ window.addEventListener("load", function () {
       this.foodInterval = 3000;
       this.enemyInterval = 2000;
       this.debug = true;
-      this.score = 0;
+      this.maxScore = 100;
+      this.score = this.maxScore;
       this.fontColor = "white";
       this.UI = new UI(this);
     }

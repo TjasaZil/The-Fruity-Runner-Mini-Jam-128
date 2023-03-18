@@ -99,7 +99,8 @@ class Player {
         food.y + food.height > this.y
       ) {
         food.markedForDeletionFood = true;
-        this.game.score++;
+        if (this.game.score < this.game.maxScore) this.game.score++;
+        else this.game.score = this.game.maxScore;
       } else {
       }
     });
