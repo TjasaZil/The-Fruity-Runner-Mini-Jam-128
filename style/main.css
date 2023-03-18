@@ -18,6 +18,11 @@ body {
   left: 50%;
 }
 
+#layer1,
+#layer2,
+#layer3,
+#layer4,
+#layer5,
 #player {
   display: none;
 }/*# sourceMappingURL=main.css.map */

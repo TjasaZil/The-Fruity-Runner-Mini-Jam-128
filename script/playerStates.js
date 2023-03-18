@@ -16,6 +16,8 @@ class Sitting extends State {
     this.player = player;
   }
   enter() {
+    this.player.frameX = 0;
+    this.player.maxFrame = 5;
     this.player.frameY = 4;
   }
   handleInput(input) {
@@ -31,6 +33,8 @@ class Running extends State {
     this.player = player;
   }
   enter() {
+    this.player.frameX = 0;
+    this.player.maxFrame = 7;
     this.player.frameY = 3;
   }
   handleInput(input) {
@@ -49,6 +53,8 @@ class Jumping extends State {
   }
   enter() {
     if (this.player.onGround()) this.player.vy = -10;
+    this.player.frameX = 0;
+    this.player.maxFrame = 3;
     this.player.frameY = 1;
   }
   handleInput(input) {
@@ -64,8 +70,9 @@ class Falling extends State {
     this.player = player;
   }
   enter() {
+    this.player.frameX = 4;
+    this.player.maxFrame = 7;
     this.player.frameY = 5;
-    //this.player.frameX = 4;
   }
   handleInput(input) {
     if (this.player.onGround()) {
