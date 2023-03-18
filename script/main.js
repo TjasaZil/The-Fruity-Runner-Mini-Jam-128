@@ -2,6 +2,8 @@ import { Player } from "./player.js";
 import { InputHandler } from "./input.js";
 import { Background } from "./background.js";
 import { Bush1, Bush2, Trap } from "./enemies.js";
+import { UI } from "./ui.js";
+import { Broccoli, Strawberry, Pumpkin } from "./food.js";
 
 window.addEventListener("load", function () {
   const canvas = document.getElementById("canvas1");
@@ -19,9 +21,15 @@ window.addEventListener("load", function () {
       this.player = new Player(this);
       this.input = new InputHandler(this);
       this.enemies = [];
+      this.foods = [];
       this.enemyTimer = 0;
+      this.foodTimer = 0;
+      this.foodInterval = 3000;
       this.enemyInterval = 2000;
       this.debug = true;
+      this.score = 0;
+      this.fontColor = "white";
+      this.UI = new UI(this);
     }
     update(deltaTime) {
       this.background.update();
@@ -38,6 +46,16 @@ window.addEventListener("load", function () {
         if (enemy.markedForDeletion)
           this.enemies.splice(this.enemies.indexOf(enemy), 1);
       });
+      if (this.foodTimer > this.foodInterval) {
+        this.addFood();
+        this.foodTimer = 0;
+      } else this.foodTimer += deltaTime;
+
+      this.foods.forEach((food) => {
+        food.update(deltaTime);
+        if (food.markedForDeletionFood)
+          this.foods.splice(this.foods.indexOf(food), 1);
+      });
     }
     draw(context) {
       this.background.draw(context);
@@ -45,6 +63,10 @@ window.addEventListener("load", function () {
       this.enemies.forEach((enemy) => {
         enemy.draw(context);
       });
+      this.foods.forEach((food) => {
+        food.draw(context);
+      });
+      this.UI.draw(context);
     }
     addEnemy() {
       if (this.speed > 0) {
@@ -53,7 +75,16 @@ window.addEventListener("load", function () {
         else this.enemies.push(new Bush1(this));
       }
 
-      console.log(this.enemies);
+      //console.log(this.enemies);
+    }
+    addFood() {
+      if (this.speed > 0) {
+        if (Math.random() < 0.33) this.foods.push(new Pumpkin(this));
+        else if (Math.random() > 0.66) this.foods.push(new Strawberry(this));
+        else this.foods.push(new Broccoli(this));
+      }
+
+      console.log(this.foods);
     }
   }
   const game = new Game(canvas.width, canvas.height);

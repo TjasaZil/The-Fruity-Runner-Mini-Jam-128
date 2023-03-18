@@ -28,6 +28,7 @@ class Player {
     this.currentState.enter();
   }
   update(input, deltaTime) {
+    this.checkCollision();
     this.currentState.handleInput(input);
     //horizontal movement
     this.x += this.speed;
@@ -76,6 +77,32 @@ class Player {
     this.currentState = this.states[state];
     this.game.speed = this.game.maxSpeed * speed;
     this.currentState.enter();
+  }
+  checkCollision() {
+    this.game.enemies.forEach((enemy) => {
+      if (
+        enemy.x < this.x + this.width &&
+        enemy.x + enemy.width > this.x &&
+        enemy.y < this.y + this.height &&
+        enemy.y + enemy.height > this.y
+      ) {
+        enemy.markedForDeletion = true;
+        this.game.score--;
+      } else {
+      }
+    });
+    this.game.foods.forEach((food) => {
+      if (
+        food.x < this.x + this.width &&
+        food.x + food.width > this.x &&
+        food.y < this.y + this.height &&
+        food.y + food.height > this.y
+      ) {
+        food.markedForDeletionFood = true;
+        this.game.score++;
+      } else {
+      }
+    });
   }
 }
 export { Player };

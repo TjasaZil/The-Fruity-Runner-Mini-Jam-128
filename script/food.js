@@ -1,4 +1,4 @@
-class Enemy {
+class Fruit {
   constructor() {
     this.frameX = 0;
     this.frameY = 0;
@@ -20,7 +20,7 @@ class Enemy {
     }
     //check if off screen
 
-    if (this.x + this.width < 0) this.markedForDeletion = true;
+    if (this.x + this.width < 0) this.markedForDeletionFood = true;
   }
   draw(context) {
     if (this.game.debug)
@@ -38,53 +38,60 @@ class Enemy {
     );
   }
 }
-class Bush1 extends Enemy {
+
+class Pumpkin extends Fruit {
   constructor(game) {
     super();
     this.game = game;
-    this.width = 56;
-    this.height = 35;
+    this.width = 28;
+    this.height = 28;
     this.x = this.game.width + Math.random() * this.game.width * 0.5;
-    this.y = this.game.height - this.height - this.game.groundMargin;
+    this.y =
+      this.game.height -
+      this.height -
+      this.game.groundMargin -
+      this.game.height * Math.random() * 0.3;
     this.speedX = 0;
     this.speedY = 0;
     this.maxFrame = 0;
-    this.image = document.getElementById("objects-update");
-  }
-  update(deltaTime) {
-    super.update(deltaTime);
+    this.image = document.getElementById("pumpkin");
   }
 }
-class Bush2 extends Enemy {
+class Broccoli extends Fruit {
   constructor(game) {
     super();
     this.game = game;
-    this.width = 50;
-    this.height = 34;
+    this.width = 28;
+    this.height = 28;
     this.x = this.game.width + Math.random() * this.game.width * 0.5;
-    this.y = this.game.height - this.height - this.game.groundMargin;
+    this.y =
+      this.game.height -
+      this.height -
+      this.game.groundMargin -
+      this.game.height * Math.random() * 0.3;
     this.speedX = 0;
     this.speedY = 0;
     this.maxFrame = 0;
-    this.image = document.getElementById("objects");
+    this.image = document.getElementById("broccoli");
   }
 }
-class Trap extends Enemy {
+class Strawberry extends Fruit {
   constructor(game) {
     super();
     this.game = game;
-    this.width = 50;
-    this.height = 12;
+    this.width = 28;
+    this.height = 28;
     this.x = this.game.width + Math.random() * this.game.width * 0.5;
-    this.y = this.game.height - this.height - this.game.groundMargin;
+    this.y =
+      this.game.height -
+      this.height -
+      this.game.groundMargin -
+      this.game.height * Math.random() * 0.3;
     this.speedX = 0;
     this.speedY = 0;
-    this.maxFrame = 2;
-    this.image = document.getElementById("field-object");
-  }
-  update(deltaTime) {
-    super.update(deltaTime);
+    this.maxFrame = 0;
+    this.image = document.getElementById("strawberry");
   }
 }
 
-export { Bush1, Bush2, Trap };
+export { Pumpkin, Broccoli, Strawberry };
