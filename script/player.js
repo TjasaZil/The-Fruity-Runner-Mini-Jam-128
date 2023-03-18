@@ -1,4 +1,11 @@
-import { Sitting, Running, Jumping, Falling } from "./playerStates.js";
+import {
+  Sitting,
+  Running,
+  Jumping,
+  Falling,
+  Dead,
+  Hit,
+} from "./playerStates.js";
 
 class Player {
   constructor(game) {
@@ -19,13 +26,14 @@ class Player {
     this.speed = 0;
     this.maxSpeed = 5;
     this.states = [
-      new Sitting(this),
-      new Running(this),
-      new Jumping(this),
-      new Falling(this),
+      new Sitting(this.game),
+      new Running(this.game),
+      new Jumping(this.game),
+      new Falling(this.game),
+      new Dead(this.game),
+      new Hit(this.game),
     ];
-    this.currentState = this.states[0];
-    this.currentState.enter();
+
     this.foodAudio = new Audio("../assets/Music/Fruit-collect.wav");
     this.enemyAudio = new Audio("../assets/Music/Hit-damage.wav");
   }
@@ -91,8 +99,8 @@ class Player {
         enemy.markedForDeletion = true;
         this.enemyAudio.play();
         this.enemyAudio.volume = 0.05;
+        this.setState(5, 0);
         this.game.score--;
-      } else {
       }
     });
     this.game.foods.forEach((food) => {
@@ -111,6 +119,11 @@ class Player {
       } else {
       }
     });
+  }
+  restart() {
+    // reset score and game state
+    this.score = 0;
+    this.currentState = new Sitting(this);
   }
 }
 export { Player };
