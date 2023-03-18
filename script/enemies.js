@@ -40,13 +40,13 @@ class Bush1 extends Enemy {
   constructor(game) {
     super();
     this.game = game;
-    this.width = 50;
-    this.height = 50;
+    this.width = 56;
+    this.height = 35;
     this.x = this.game.width + Math.random() * this.game.width * 0.5;
     this.y = this.game.height - this.height - this.game.groundMargin;
-    this.speedX = 2;
+    this.speedX = 0;
     this.speedY = 0;
-    this.maxFrame = 3;
+    this.maxFrame = 0;
     this.image = document.getElementById("objects-update");
   }
   update(deltaTime) {
@@ -61,7 +61,7 @@ class Bush2 extends Enemy {
     this.height = 34;
     this.x = this.game.width + Math.random() * this.game.width * 0.5;
     this.y = this.game.height - this.height - this.game.groundMargin;
-    this.speedX = 2;
+    this.speedX = 0;
     this.speedY = 0;
     this.maxFrame = 0;
     this.image = document.getElementById("objects");
@@ -75,7 +75,7 @@ class Trap extends Enemy {
     this.height = 12;
     this.x = this.game.width + Math.random() * this.game.width * 0.5;
     this.y = this.game.height - this.height - this.game.groundMargin;
-    this.speedX = 2;
+    this.speedX = 0;
     this.speedY = 0;
     this.maxFrame = 2;
     this.image = document.getElementById("field-object");

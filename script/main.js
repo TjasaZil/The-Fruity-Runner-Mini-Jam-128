@@ -46,9 +46,12 @@ window.addEventListener("load", function () {
       });
     }
     addEnemy() {
-      this.enemies.push(new Trap(this));
-      this.enemies.push(new Bush2(this));
-      this.enemies.push(new Bush1(this));
+      if (this.speed > 0) {
+        if (Math.random() < 0.33) this.enemies.push(new Trap(this));
+        else if (Math.random() > 0.66) this.enemies.push(new Bush2(this));
+        else this.enemies.push(new Bush1(this));
+      }
+
       console.log(this.enemies);
     }
   }
