@@ -14,6 +14,13 @@ class Layer {
   }
   draw(context) {
     context.drawImage(this.image, this.x, this.y, this.width, this.height);
+    context.drawImage(
+      this.image,
+      this.x + this.width,
+      this.y,
+      this.width,
+      this.height
+    );
   }
 }
 
@@ -31,11 +38,45 @@ class Background {
       this.game,
       this.width,
       this.height,
-      1,
+      0.5,
       this.layerForest1
     );
-    console.log(this.layer1);
-    this.backgroundLayers = [this.layer1];
+    this.layer2 = new Layer(
+      this.game,
+      this.width,
+      this.height,
+      0.6,
+      this.layerForest2
+    );
+    this.layer3 = new Layer(
+      this.game,
+      this.width,
+      this.height,
+      0.7,
+      this.layerForest3
+    );
+    this.layer4 = new Layer(
+      this.game,
+      this.width,
+      this.height,
+      0.85,
+      this.layerForest4
+    );
+    this.layer5 = new Layer(
+      this.game,
+      this.width,
+      this.height,
+      1,
+      this.layerForest5
+    );
+
+    this.backgroundLayers = [
+      this.layer1,
+      this.layer2,
+      this.layer3,
+      this.layer4,
+      this.layer5,
+    ];
   }
   update() {
     this.backgroundLayers.forEach((layer) => {
