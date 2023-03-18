@@ -50,9 +50,14 @@ class Jumping extends State {
   constructor(player) {
     super("JUMPING");
     this.player = player;
+    this.jumpSound = new Audio("../assets/Music/Jump.wav");
   }
   enter() {
-    if (this.player.onGround()) this.player.vy = -12;
+    if (this.player.onGround()) {
+      this.jumpSound.volume = 0.05;
+      this.jumpSound.play();
+      this.player.vy = -12;
+    }
     this.player.frameX = 0;
     this.player.maxFrame = 3;
     this.player.frameY = 1;

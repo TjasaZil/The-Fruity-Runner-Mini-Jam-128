@@ -26,6 +26,8 @@ class Player {
     ];
     this.currentState = this.states[0];
     this.currentState.enter();
+    this.foodAudio = new Audio("../assets/Music/Fruit-collect.wav");
+    this.enemyAudio = new Audio("../assets/Music/Hit-damage.wav");
   }
   update(input, deltaTime) {
     this.checkCollision();
@@ -56,8 +58,8 @@ class Player {
     }
   }
   draw(context) {
-    if (this.game.debug)
-      context.strokeRect(this.x, this.y, this.width, this.height);
+    /*if (this.game.debug)
+      context.strokeRect(this.x, this.y, this.width, this.height);*/
     context.drawImage(
       this.image,
       this.frameX * this.width,
@@ -87,6 +89,8 @@ class Player {
         enemy.y + enemy.height > this.y
       ) {
         enemy.markedForDeletion = true;
+        this.enemyAudio.play();
+        this.enemyAudio.volume = 0.05;
         this.game.score--;
       } else {
       }
@@ -99,8 +103,11 @@ class Player {
         food.y + food.height > this.y
       ) {
         food.markedForDeletionFood = true;
-        if (this.game.score < this.game.maxScore) this.game.score++;
-        else this.game.score = this.game.maxScore;
+        if (this.game.score < this.game.maxScore) {
+          this.foodAudio.play();
+          this.foodAudio.volume = 0.05;
+          this.game.score++;
+        } else this.game.score = this.game.maxScore;
       } else {
       }
     });
