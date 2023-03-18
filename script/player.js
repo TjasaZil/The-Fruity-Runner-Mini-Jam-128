@@ -2,7 +2,7 @@ class Player {
   constructor(game) {
     this.game = game;
     this.width = 32;
-    this.height = 32;
+    this.height = 40;
     this.x = 0;
     this.y = this.game.height - this.height;
     this.vy = 0;
