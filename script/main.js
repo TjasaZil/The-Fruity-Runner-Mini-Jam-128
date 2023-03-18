@@ -17,10 +17,11 @@ window.addEventListener("load", function () {
       this.maxSpeed = 3;
       this.background = new Background(this);
       this.player = new Player(this);
-      this.input = new InputHandler();
+      this.input = new InputHandler(this);
       this.enemies = [];
       this.enemyTimer = 0;
       this.enemyInterval = 2000;
+      this.debug = true;
     }
     update(deltaTime) {
       this.background.update();

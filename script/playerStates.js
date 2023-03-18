@@ -52,7 +52,7 @@ class Jumping extends State {
     this.player = player;
   }
   enter() {
-    if (this.player.onGround()) this.player.vy = -13;
+    if (this.player.onGround()) this.player.vy = -15;
     this.player.frameX = 0;
     this.player.maxFrame = 3;
     this.player.frameY = 1;

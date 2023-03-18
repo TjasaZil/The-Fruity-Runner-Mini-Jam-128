@@ -55,7 +55,8 @@ class Player {
     }
   }
   draw(context) {
-    context.fillStyle = "red";
+    if (this.game.debug)
+      context.strokeRect(this.x, this.y, this.width, this.height);
     context.drawImage(
       this.image,
       this.frameX * this.width,
