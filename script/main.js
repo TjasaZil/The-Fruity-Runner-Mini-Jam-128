@@ -29,6 +29,8 @@ window.addEventListener("load", function () {
       this.debug = true;
       this.maxScore = 100;
       this.score = this.maxScore;
+      this.scoreDecrementInterval = 2750; // decrement score every 1 second
+      this.lastScoreDecrementTime = 0;
       this.fontColor = "white";
       this.UI = new UI(this);
     }
@@ -57,6 +59,16 @@ window.addEventListener("load", function () {
         if (food.markedForDeletionFood)
           this.foods.splice(this.foods.indexOf(food), 1);
       });
+      // handle score
+      if (
+        this.score > 0 &&
+        this.lastScoreDecrementTime > this.scoreDecrementInterval
+      ) {
+        this.decreaseScore();
+        this.lastScoreDecrementTime = 0;
+      } else {
+        this.lastScoreDecrementTime += deltaTime;
+      }
     }
     draw(context) {
       this.background.draw(context);
@@ -86,6 +98,19 @@ window.addEventListener("load", function () {
       }
 
       console.log(this.foods);
+    }
+    decreaseScore() {
+      if (this.speed > 0) {
+        // start timer only if speed is greater than 0
+        if (this.score > 0) {
+          this.score--;
+        } else {
+          // game over
+          this.score = 0;
+          this.speed = 0;
+          this.UI.showGameOverScreen();
+        }
+      }
     }
   }
   const game = new Game(canvas.width, canvas.height);

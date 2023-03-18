@@ -16,3 +16,4 @@ This is a simple runner game that I made for the mini game jam 128 hosted on itc
 - Character - [Hooded Protagonist by Penzilla](https://penzilla.itch.io/hooded-protagonist)<br><br> You can follow them on [Twitter](https://twitter.com/PennyPenzilla) or [itch.io](https://penzilla.itch.io/) to see more of their art. [Patreon](https://www.patreon.com/penzilla)
 
 - Food - [Food and kitchenware by Poloviinkin](https://poloviiinkin.itch.io/food) - [license](https://creativecommons.org/licenses/by-sa/4.0/deed.ru)
+- Heart icon - [Hearts and health bar by VampireGirl](https://fliflifly.itch.io/hearts-and-health-bar) - [itch.io](https://fliflifly.itch.io/)
