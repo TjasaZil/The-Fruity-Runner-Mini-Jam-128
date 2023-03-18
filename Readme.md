@@ -14,3 +14,5 @@ This is a simple runner game that I made for the mini game jam 128 hosted on itc
   Assets used in this game are used only for development, not redistribution. They should not be shared, sold or distributed in their original form or as derivative work. For more, please feel free to check out the `.txt` files in the assets folder or the [license page](https://edermunizlicense.carrd.co/).
 
 - Character - [Hooded Protagonist by Penzilla](https://penzilla.itch.io/hooded-protagonist)<br><br> You can follow them on [Twitter](https://twitter.com/PennyPenzilla) or [itch.io](https://penzilla.itch.io/) to see more of their art. [Patreon](https://www.patreon.com/penzilla)
+
+- Food - [Food and kitchenware by Poloviinkin](https://poloviiinkin.itch.io/food) - [license](https://creativecommons.org/licenses/by-sa/4.0/deed.ru)

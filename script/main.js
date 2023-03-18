@@ -1,6 +1,7 @@
 import { Player } from "./player.js";
 import { InputHandler } from "./input.js";
 import { Background } from "./background.js";
+import { Bush1, Bush2, Trap } from "./enemies.js";
 
 window.addEventListener("load", function () {
   const canvas = document.getElementById("canvas1");
@@ -17,14 +18,36 @@ window.addEventListener("load", function () {
       this.background = new Background(this);
       this.player = new Player(this);
       this.input = new InputHandler();
+      this.enemies = [];
+      this.enemyTimer = 0;
+      this.enemyInterval = 2000;
     }
     update(deltaTime) {
       this.background.update();
       this.player.update(this.input.keys, deltaTime);
+
+      //handle enemies
+      if (this.enemyTimer > this.enemyInterval) {
+        this.addEnemy();
+        this.enemyTimer = 0;
+      } else this.enemyTimer += deltaTime;
+
+      this.enemies.forEach((enemy) => {
+        enemy.update(deltaTime);
+      });
     }
     draw(context) {
       this.background.draw(context);
       this.player.draw(context);
+      this.enemies.forEach((enemy) => {
+        enemy.draw(context);
+      });
+    }
+    addEnemy() {
+      this.enemies.push(new Trap(this));
+      this.enemies.push(new Bush2(this));
+      this.enemies.push(new Bush1(this));
+      console.log(this.enemies);
     }
   }
   const game = new Game(canvas.width, canvas.height);
@@ -33,7 +56,6 @@ window.addEventListener("load", function () {
 
   const animate = (timeStamp) => {
     const deltaTime = timeStamp - lastTime;
-    //console.log(deltaTime);
     lastTime = timeStamp;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     game.update(deltaTime);

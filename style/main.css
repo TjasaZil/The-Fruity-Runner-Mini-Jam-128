@@ -23,6 +23,9 @@ body {
 #layer3,
 #layer4,
 #layer5,
-#player {
+#player,
+#objects,
+#objects-update,
+#field-object {
   display: none;
 }/*# sourceMappingURL=main.css.map */
