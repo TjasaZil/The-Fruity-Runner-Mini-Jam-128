@@ -24,7 +24,9 @@ class Sitting extends State {
   }
   handleInput(input) {
     if (input.includes("ArrowLeft") || input.includes("ArrowRight")) {
-      this.game.player.setState(states.RUNNING, 1);
+      this.game.player.setState(states.RUNNING, 1.2);
+    } else if (this.game.gameOver) {
+      this.game.player.setState(states.DEAD, 0);
     }
   }
 }
@@ -43,6 +45,8 @@ class Running extends State {
       this.game.player.setState(states.SITTING, 0);
     } else if (input.includes("ArrowUp")) {
       this.game.player.setState(states.JUMPING, 1);
+    } else if (this.game.gameOver) {
+      this.game.player.setState(states.DEAD, 0);
     }
   }
 }
@@ -66,6 +70,8 @@ class Jumping extends State {
   handleInput(input) {
     if (this.game.player.vy > this.game.player.weight) {
       this.game.player.setState(states.FALLING, 1);
+    } else if (this.game.gameOver) {
+      this.game.player.setState(states.DEAD, 0);
     }
   }
 }
@@ -81,7 +87,9 @@ class Falling extends State {
   }
   handleInput(input) {
     if (this.game.player.onGround()) {
-      this.game.player.setState(states.RUNNING, 1);
+      this.game.player.setState(states.RUNNING, 1.2);
+    } else if (this.game.gameOver) {
+      this.game.player.setState(states.DEAD, 0);
     }
   }
 }
@@ -107,9 +115,11 @@ class Hit extends State {
   handleInput(input) {
     console.log("Hit state handleInput() called");
     if (this.game.player.frameX >= 1 && this.game.player.onGround()) {
-      this.game.player.setState(states.RUNNING, 1);
+      this.game.player.setState(states.RUNNING, 1.2);
     } else if (this.game.player.frameX >= 1 && !this.game.player.onGround()) {
-      this.game.player.setState(states.FALLING, 2);
+      this.game.player.setState(states.FALLING, 1.2);
+    } else if (this.game.gameOver) {
+      this.game.player.setState(states.DEAD, 0);
     }
   }
 }

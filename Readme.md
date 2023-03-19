@@ -4,9 +4,12 @@
 - limitation: The only way to go is up
 - made with: HTML5, Canvas, SCSS and Vanilla JS
 
+About the game:
+The little Red Hood is feeling under the weather and is hunting for some healthy foods in the forest. Pick up the fruits and veggies to keep your health high and avoid the traps and obsticles of the forest that can hurt you. The only way to survive is to keep your health up. Once it hits 0, the game is over.
+
 This is a simple runner game that I made for the mini game jam 128 hosted on itch.io. The game jam was held from March 17th 2023 at 5:00 AM to March 20th 2023 at 5:00 AM. It is a short game that I plan to expand in the future.
 
-The objective of the game is to pick up healthy snacks in order to keep your health high. Once the health counter hits 0 the game ends. The game uses arrow keys as controls.
+The objective of the game is to pick up healthy snacks in order to keep your health high. Once the health counter hits 0 the game ends. The game uses arrow keys as controls. Press and hold the Enter key to restart the game after the game over screen.
 
 ## art:
 
