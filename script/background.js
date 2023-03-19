@@ -27,8 +27,10 @@ class Layer {
 class Background {
   constructor(game) {
     this.game = game;
+    //this.width = 1667;
+    //this.height = 320;
     this.width = 1667;
-    this.height = 320;
+    this.height = 480;
     this.layerForest1 = document.getElementById("layer1");
     this.layerForest2 = document.getElementById("layer2");
     this.layerForest3 = document.getElementById("layer3");

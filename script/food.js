@@ -50,7 +50,7 @@ class Pumpkin extends Fruit {
       this.game.height -
       this.height -
       this.game.groundMargin -
-      this.game.height * Math.random() * 0.3;
+      this.game.height * Math.random() * 0.25;
     this.speedX = 0;
     this.speedY = 0;
     this.maxFrame = 0;
@@ -68,7 +68,7 @@ class Broccoli extends Fruit {
       this.game.height -
       this.height -
       this.game.groundMargin -
-      this.game.height * Math.random() * 0.3;
+      this.game.height * Math.random() * 0.25;
     this.speedX = 0;
     this.speedY = 0;
     this.maxFrame = 0;
@@ -86,7 +86,7 @@ class Strawberry extends Fruit {
       this.game.height -
       this.height -
       this.game.groundMargin -
-      this.game.height * Math.random() * 0.3;
+      this.game.height * Math.random() * 0.25;
     this.speedX = 0;
     this.speedY = 0;
     this.maxFrame = 0;

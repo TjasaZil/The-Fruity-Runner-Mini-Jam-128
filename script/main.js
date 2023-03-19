@@ -8,15 +8,15 @@ import { Broccoli, Strawberry, Pumpkin } from "./food.js";
 window.addEventListener("load", function () {
   const canvas = document.getElementById("canvas1");
   const ctx = canvas.getContext("2d");
-  //canvas.width = 480;
-  //canvas.height = 320;
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  canvas.width = 720;
+  canvas.height = 480;
+  //canvas.width = window.innerWidth;
+  //canvas.height = window.innerHeight;
   class Game {
     constructor(width, height) {
       this.width = width;
       this.height = height;
-      this.groundMargin = 20;
+      this.groundMargin = 30;
       this.speed = 0;
       this.maxSpeed = 5;
       this.background = new Background(this);
@@ -38,10 +38,10 @@ window.addEventListener("load", function () {
       this.lastScoreDecrementTime = 0;
       this.fontColor = "white";
       this.gameOver = false;
-      /*this.backgroundMusic = new Audio("../assets/Music/Title.wav");
+      this.backgroundMusic = new Audio("../assets/Music/Title.wav");
       this.backgroundMusic.loop = true;
       this.backgroundMusic.volume = 0.1;
-      this.backgroundMusic.play();*/
+      this.backgroundMusic.play();
       this.UI = new UI(this);
       this.player.currentState = this.player.states[0];
       this.player.currentState.enter();
