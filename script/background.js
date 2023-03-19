@@ -39,9 +39,9 @@ class Background {
     this.layerNightForest3 = document.getElementById("night-layer3");
     this.layerNightForest4 = document.getElementById("night-layer4");
     this.layerNightForest5 = document.getElementById("night-layer5");
-    this.lastBackgroundSwitch = 0;
-    this.startInterval = 0;
-    this.backgroundSwitchInterval = 60; //bg switches every 2 seconds
+    //this.lastBackgroundSwitch = 0;
+    //this.startInterval = 0;
+    //this.backgroundSwitchInterval = 60; //bg switches every 2 seconds
     //day layers
     this.layer1 = new Layer(
       this.game,
@@ -132,7 +132,7 @@ class Background {
     ];
   }
   update() {
-    if (this.lastBackgroundSwitch % 2 === 0) {
+    if (this.game.lastBackgroundSwitch % 2 === 0) {
       this.backgroundLayers.forEach((layer) => {
         layer.update();
       });
@@ -143,7 +143,7 @@ class Background {
     }
   }
   draw(context) {
-    if (this.lastBackgroundSwitch % 2 === 0) {
+    if (this.game.lastBackgroundSwitch % 2 === 0) {
       this.backgroundLayers.forEach((layer) => {
         layer.draw(context);
       });
@@ -152,7 +152,7 @@ class Background {
         layer.draw(context);
       });
     }
-  }
+  } /*
   timeTick() {
     this.startInterval++;
     if (this.startInterval > this.backgroundSwitchInterval) {
@@ -160,6 +160,6 @@ class Background {
       this.lastBackgroundSwitch++;
     }
     //console.log(this.startInterval);
-  }
+  }*/
 }
 export { Background };

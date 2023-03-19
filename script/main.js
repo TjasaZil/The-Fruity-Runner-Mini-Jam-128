@@ -8,8 +8,10 @@ import { Broccoli, Strawberry, Pumpkin } from "./food.js";
 window.addEventListener("load", function () {
   const canvas = document.getElementById("canvas1");
   const ctx = canvas.getContext("2d");
-  canvas.width = 480;
-  canvas.height = 320;
+  //canvas.width = 480;
+  //canvas.height = 320;
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
   class Game {
     constructor(width, height) {
       this.width = width;
@@ -43,10 +45,13 @@ window.addEventListener("load", function () {
       this.UI = new UI(this);
       this.player.currentState = this.player.states[0];
       this.player.currentState.enter();
+      this.lastBackgroundSwitch = 0;
+      this.startInterval = 0;
+      this.backgroundSwitchInterval = 5000;
     }
     update(deltaTime) {
       this.background.update();
-      this.background.timeTick();
+      this.timeTick();
       //this.enemy.timeTick();
       this.player.update(this.input.keys, deltaTime);
 
@@ -133,6 +138,14 @@ window.addEventListener("load", function () {
         }
       }
     }
+    timeTick() {
+      this.startInterval++;
+      if (this.startInterval > this.backgroundSwitchInterval) {
+        this.startInterval = 0;
+        this.lastBackgroundSwitch++;
+      }
+      //console.log(this.startInterval);
+    }
     reset() {
       // reset all game state to its initial values
       this.score = this.maxScore;
@@ -149,10 +162,8 @@ window.addEventListener("load", function () {
       this.player.currentState.enter();
       this.player.x = 0;
       this.player.speed = 0;
-      this.background.lastBackgroundSwitch = 0;
-      this.background.startInterval = 0;
-      this.enemy.lastBackgroundSwitch = 0;
-      this.enemy.startInterval = 0;
+      this.lastBackgroundSwitch = 0;
+      this.startInterval = 0;
 
       animate(0);
     }

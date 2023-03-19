@@ -6,9 +6,9 @@ class Enemy {
     this.frameInterval = 1000 / this.fps;
     this.frameTimer = 0;
     this.markedForDeletion = false;
-    this.lastBackgroundSwitch = 0;
-    this.startInterval = 0;
-    this.backgroundSwitchInterval = 60;
+    //this.lastBackgroundSwitch = 0;
+    //this.startInterval = 0;
+    //this.backgroundSwitchInterval = 60;
   }
   update(deltaTime) {
     // movement of the trap
@@ -28,7 +28,7 @@ class Enemy {
   draw(context) {
     /*if (this.game.debug)
       context.strokeRect(this.x, this.y, this.width, this.height);*/
-    if (this.lastBackgroundSwitch % 2 === 0) {
+    if (this.game.lastBackgroundSwitch % 2 === 0) {
       context.drawImage(
         this.image,
         this.frameX * this.width,
@@ -53,7 +53,7 @@ class Enemy {
         this.height
       );
     }
-  }
+  } /*
   timeTick() {
     this.startInterval++;
     if (this.startInterval > this.backgroundSwitchInterval) {
@@ -61,7 +61,7 @@ class Enemy {
       this.lastBackgroundSwitch++;
       console.log(this.lastBackgroundSwitch);
     }
-  }
+  }*/
 }
 class Bush1 extends Enemy {
   constructor(game) {
@@ -81,7 +81,7 @@ class Bush1 extends Enemy {
     super.update(deltaTime);
   }
   draw(context) {
-    this.timeTick();
+    this.game.timeTick();
     super.draw(context);
   }
 }
@@ -100,7 +100,7 @@ class Bush2 extends Enemy {
     this.imageNight = document.getElementById("objects-night");
   }
   draw(context) {
-    this.timeTick();
+    this.game.timeTick();
     super.draw(context);
   }
 }
@@ -116,9 +116,14 @@ class Trap extends Enemy {
     this.speedY = 0;
     this.maxFrame = 2;
     this.image = document.getElementById("field-object");
+    this.imageNight = document.getElementById("field-object-night");
   }
   update(deltaTime) {
     super.update(deltaTime);
+  }
+  draw(context) {
+    this.game.timeTick();
+    super.draw(context);
   }
 }
 
