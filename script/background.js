@@ -5,8 +5,6 @@ class Layer {
     this.height = height;
     this.speedModifier = speedModifier;
     this.image = image;
-    this.lastBackgroundSwitch = 0;
-    this.backgroundSwitchInterval = 120000; //bg switches every 2 seconds
     this.x = 0;
     this.y = 0;
   }
@@ -36,6 +34,15 @@ class Background {
     this.layerForest3 = document.getElementById("layer3");
     this.layerForest4 = document.getElementById("layer4");
     this.layerForest5 = document.getElementById("layer5");
+    this.layerNightForest1 = document.getElementById("night-layer1");
+    this.layerNightForest2 = document.getElementById("night-layer2");
+    this.layerNightForest3 = document.getElementById("night-layer3");
+    this.layerNightForest4 = document.getElementById("night-layer4");
+    this.layerNightForest5 = document.getElementById("night-layer5");
+    this.lastBackgroundSwitch = 0;
+    this.startInterval = 0;
+    this.backgroundSwitchInterval = 60; //bg switches every 2 seconds
+    //day layers
     this.layer1 = new Layer(
       this.game,
       this.width,
@@ -71,7 +78,44 @@ class Background {
       1,
       this.layerForest5
     );
+    //night layer
+    this.nightLayer1 = new Layer(
+      this.game,
+      this.width,
+      this.height,
+      0.1,
+      this.layerNightForest1
+    );
+    this.nightLayer2 = new Layer(
+      this.game,
+      this.width,
+      this.height,
+      0.3,
+      this.layerNightForest2
+    );
+    this.nightLayer3 = new Layer(
+      this.game,
+      this.width,
+      this.height,
+      0.5,
+      this.layerNightForest3
+    );
+    this.nightLayer4 = new Layer(
+      this.game,
+      this.width,
+      this.height,
+      0.7,
+      this.layerNightForest4
+    );
+    this.nightLayer5 = new Layer(
+      this.game,
+      this.width,
+      this.height,
+      1,
+      this.layerNightForest5
+    );
 
+    //layers array
     this.backgroundLayers = [
       this.layer1,
       this.layer2,
@@ -79,16 +123,43 @@ class Background {
       this.layer4,
       this.layer5,
     ];
+    this.backgroundNightLayers = [
+      this.nightLayer1,
+      this.nightLayer2,
+      this.nightLayer3,
+      this.nightLayer4,
+      this.nightLayer5,
+    ];
   }
   update() {
-    this.backgroundLayers.forEach((layer) => {
-      layer.update();
-    });
+    if (this.lastBackgroundSwitch % 2 === 0) {
+      this.backgroundLayers.forEach((layer) => {
+        layer.update();
+      });
+    } else {
+      this.backgroundNightLayers.forEach((layer) => {
+        layer.update();
+      });
+    }
   }
   draw(context) {
-    this.backgroundLayers.forEach((layer) => {
-      layer.draw(context);
-    });
+    if (this.lastBackgroundSwitch % 2 === 0) {
+      this.backgroundLayers.forEach((layer) => {
+        layer.draw(context);
+      });
+    } else {
+      this.backgroundNightLayers.forEach((layer) => {
+        layer.draw(context);
+      });
+    }
+  }
+  timeTick() {
+    this.startInterval++;
+    if (this.startInterval > this.backgroundSwitchInterval) {
+      this.startInterval = 0;
+      this.lastBackgroundSwitch++;
+    }
+    //console.log(this.startInterval);
   }
 }
 export { Background };

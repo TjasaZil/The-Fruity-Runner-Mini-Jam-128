@@ -46,6 +46,7 @@ window.addEventListener("load", function () {
     }
     update(deltaTime) {
       this.background.update();
+      this.background.timeTick();
       this.player.update(this.input.keys, deltaTime);
 
       //handle enemies
@@ -147,6 +148,8 @@ window.addEventListener("load", function () {
       this.player.currentState.enter();
       this.player.x = 0;
       this.player.speed = 0;
+      this.background.lastBackgroundSwitch = 0;
+      this.background.startInterval = 0;
 
       animate(0);
     }
