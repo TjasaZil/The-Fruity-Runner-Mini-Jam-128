@@ -30,9 +30,12 @@ window.addEventListener("load", function () {
       //this.debug = true;
       this.maxScore = 100;
       this.score = this.maxScore;
+      this.fruitScore = 0;
+      this.collisionScore = 0;
       this.scoreDecrementInterval = 2750; // decrement score every 1 second
       this.lastScoreDecrementTime = 0;
       this.fontColor = "white";
+      this.gameOver = false;
       /* this.backgroundMusic = new Audio("../assets/Music/Title.wav");
       this.backgroundMusic.loop = true;
       this.backgroundMusic.volume = 0.1;
@@ -75,6 +78,11 @@ window.addEventListener("load", function () {
         this.lastScoreDecrementTime = 0;
       } else {
         this.lastScoreDecrementTime += deltaTime;
+      }
+      //handle game over
+
+      if (this.score <= 0) {
+        this.gameOver = true;
       }
       //handle collision sprites
 
@@ -120,12 +128,12 @@ window.addEventListener("load", function () {
         // start timer only if speed is greater than 0
         if (this.score > 0) {
           this.score--;
-        } else {
+        } /*else {
           // game over
           this.score = 0;
           this.speed = 0;
           this.UI.showGameOverScreen();
-        }
+        }*/
       }
     }
   }
@@ -139,7 +147,7 @@ window.addEventListener("load", function () {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     game.update(deltaTime);
     game.draw(ctx);
-    requestAnimationFrame(animate);
+    if (!game.gameOver) requestAnimationFrame(animate);
   };
 
   animate(0);

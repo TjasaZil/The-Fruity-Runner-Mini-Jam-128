@@ -43,7 +43,8 @@ class Player {
     this.currentState.handleInput(input);
     //horizontal movement
     this.x += this.speed;
-    if (input.includes("ArrowRight")) this.speed = this.maxSpeed;
+    if (input.includes("ArrowRight") && this.currentState !== this.states[5])
+      this.speed = this.maxSpeed;
     else if (input.includes("ArrowLeft")) this.speed = -this.maxSpeed;
     else this.speed = 0;
     if (this.x < 0) this.x = 0;
@@ -108,7 +109,9 @@ class Player {
         );
         this.enemyAudio.play();
         this.enemyAudio.volume = 0.05;
-        this.game.score -= 5;
+        this.game.score -= 50;
+        this.game.collisionScore++;
+        console.log(this.game.collisionScore);
       }
     });
     this.game.foods.forEach((food) => {
@@ -123,6 +126,8 @@ class Player {
           this.foodAudio.play();
           this.foodAudio.volume = 0.05;
           this.game.score++;
+          this.game.fruitScore++;
+          console.log(this.game.fruitScore);
         } else this.game.score = this.game.maxScore;
       } else {
       }

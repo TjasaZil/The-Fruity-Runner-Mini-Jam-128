@@ -15,10 +15,35 @@ class UI {
 
     // Score
     context.fillText(this.game.score, 35, 22);
+
+    //Game over message
+
+    if (this.game.gameOver) {
+      context.textAlign = "center";
+      context.fillStyle = this.game.fontColor;
+      context.font = this.fontSize * 4 + "px" + this.fontFamily;
+      context.fillText(
+        "Game Over!",
+        this.game.width * 0.5,
+        this.game.height * 0.5 - 20
+      );
+      context.font = this.fontSize * 1 + "px" + this.fontFamily;
+      context.fillText(
+        `You managed to pick up ${this.game.fruitScore} fruits and veggies`,
+        this.game.width * 0.5,
+        this.game.height * 0.5 + 20
+      );
+      context.font = this.fontSize * 1 + "px" + this.fontFamily;
+      context.fillText(
+        "Press ENTER to play again",
+        this.game.width * 0.5,
+        this.game.height * 0.5 + 35
+      );
+    }
   }
-  showGameOverScreen() {
+  /* showGameOverScreen() {
     console.log("Gem over");
-  }
+  }*/
 }
 
 export { UI };
