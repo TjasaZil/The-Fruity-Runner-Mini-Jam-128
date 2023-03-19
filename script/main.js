@@ -33,10 +33,10 @@ window.addEventListener("load", function () {
       this.scoreDecrementInterval = 2750; // decrement score every 1 second
       this.lastScoreDecrementTime = 0;
       this.fontColor = "white";
-      this.backgroundMusic = new Audio("../assets/Music/Title.wav");
+      /* this.backgroundMusic = new Audio("../assets/Music/Title.wav");
       this.backgroundMusic.loop = true;
-      this.backgroundMusic.volume = 0.2;
-      this.backgroundMusic.play();
+      this.backgroundMusic.volume = 0.1;
+      this.backgroundMusic.play();*/
       this.UI = new UI(this);
       this.player.currentState = this.player.states[0];
       this.player.currentState.enter();

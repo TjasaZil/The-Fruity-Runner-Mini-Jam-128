@@ -108,7 +108,7 @@ class Player {
         );
         this.enemyAudio.play();
         this.enemyAudio.volume = 0.05;
-        this.game.score--;
+        this.game.score -= 5;
       }
     });
     this.game.foods.forEach((food) => {
