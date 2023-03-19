@@ -35,12 +35,13 @@ class UI {
       );
       context.font = this.fontSize * 1 + "px" + this.fontFamily;
       context.fillText(
-        "Press ENTER to play again",
+        "Hold ENTER to play again",
         this.game.width * 0.5,
         this.game.height * 0.5 + 35
       );
     }
   }
+
   /* showGameOverScreen() {
     console.log("Gem over");
   }*/

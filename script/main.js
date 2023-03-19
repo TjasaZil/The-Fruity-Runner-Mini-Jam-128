@@ -136,6 +136,24 @@ window.addEventListener("load", function () {
         }*/
       }
     }
+    reset() {
+      // reset all game state to its initial values
+      this.score = this.maxScore;
+      this.fruitScore = 0;
+      this.collisionScore = 0;
+      this.speed = 0;
+      this.enemies = [];
+      this.foods = [];
+      this.collisions = [];
+      this.enemyTimer = 0;
+      this.foodTimer = 0;
+      this.gameOver = false;
+      this.player.currentState = this.player.states[0];
+      this.player.currentState.enter();
+      this.player.x = 0;
+
+      animate(0);
+    }
   }
   const game = new Game(canvas.width, canvas.height);
   console.log(game);
