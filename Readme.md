@@ -4,6 +4,8 @@
 - limitation: The only way to go is up
 - made with: HTML5, Canvas, SCSS and Vanilla JS
 
+Play the game [here](https://zuzexx.itch.io/the-fruity-runner)
+
 About the game:
 The little Red Hood is feeling under the weather and is hunting for some healthy foods in the forest. Pick up the fruits and veggies to keep your health high and avoid the traps and obsticles of the forest that can hurt you. The only way to survive is to keep your health up. Once it hits 0, the game is over.
 
