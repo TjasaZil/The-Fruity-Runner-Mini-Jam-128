@@ -5,7 +5,10 @@ class Enemy {
     this.fps = 5;
     this.frameInterval = 1000 / this.fps;
     this.frameTimer = 0;
-    this.markedForDeletionFood = false;
+    this.markedForDeletion = false;
+    this.lastBackgroundSwitch = 0;
+    this.startInterval = 0;
+    this.backgroundSwitchInterval = 60;
   }
   update(deltaTime) {
     // movement of the trap
@@ -25,17 +28,39 @@ class Enemy {
   draw(context) {
     /*if (this.game.debug)
       context.strokeRect(this.x, this.y, this.width, this.height);*/
-    context.drawImage(
-      this.image,
-      this.frameX * this.width,
-      0,
-      this.width,
-      this.height,
-      this.x,
-      this.y,
-      this.width,
-      this.height
-    );
+    if (this.lastBackgroundSwitch % 2 === 0) {
+      context.drawImage(
+        this.image,
+        this.frameX * this.width,
+        0,
+        this.width,
+        this.height,
+        this.x,
+        this.y,
+        this.width,
+        this.height
+      );
+    } else {
+      context.drawImage(
+        this.imageNight,
+        this.frameX * this.width,
+        0,
+        this.width,
+        this.height,
+        this.x,
+        this.y,
+        this.width,
+        this.height
+      );
+    }
+  }
+  timeTick() {
+    this.startInterval++;
+    if (this.startInterval > this.backgroundSwitchInterval) {
+      this.startInterval = 0;
+      this.lastBackgroundSwitch++;
+      console.log(this.lastBackgroundSwitch);
+    }
   }
 }
 class Bush1 extends Enemy {
@@ -50,9 +75,14 @@ class Bush1 extends Enemy {
     this.speedY = 0;
     this.maxFrame = 0;
     this.image = document.getElementById("objects-update");
+    this.imageNight = document.getElementById("objects-update-night");
   }
   update(deltaTime) {
     super.update(deltaTime);
+  }
+  draw(context) {
+    this.timeTick();
+    super.draw(context);
   }
 }
 class Bush2 extends Enemy {
@@ -67,6 +97,11 @@ class Bush2 extends Enemy {
     this.speedY = 0;
     this.maxFrame = 0;
     this.image = document.getElementById("objects");
+    this.imageNight = document.getElementById("objects-night");
+  }
+  draw(context) {
+    this.timeTick();
+    super.draw(context);
   }
 }
 class Trap extends Enemy {

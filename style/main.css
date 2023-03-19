@@ -35,6 +35,8 @@ body {
 #night-layer2,
 #night-layer3,
 #night-layer4,
-#night-layer5 {
+#night-layer5,
+#objects-night,
+#objects-update-night {
   display: none;
 }/*# sourceMappingURL=main.css.map */
