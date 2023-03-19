@@ -25,7 +25,9 @@ class Player {
     this.frameInterval = 1000 / this.fps;
     this.frameTimer = 0;
     this.speed = 0;
-    this.maxSpeed = 5;
+    this.maxSpeed = 3;
+    this.speedIncrease = 0.0001;
+    this.elapsedTime = 0;
     this.states = [
       new Sitting(this.game),
       new Running(this.game),
@@ -109,7 +111,7 @@ class Player {
         );
         this.enemyAudio.play();
         this.enemyAudio.volume = 0.05;
-        this.game.score -= 50;
+        this.game.score -= 5;
         this.game.collisionScore++;
         console.log(this.game.collisionScore);
       }

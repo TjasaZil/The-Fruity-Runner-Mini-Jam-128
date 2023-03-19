@@ -94,12 +94,6 @@ class Dead extends State {
     this.game.player.maxFrame = 7;
     this.game.player.frameY = 7;
   }
-
-  handleInput(input) {
-    if (input.includes("Enter")) {
-      this.game.player.restart();
-    }
-  }
 }
 class Hit extends State {
   constructor(game) {

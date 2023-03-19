@@ -5,6 +5,8 @@ class Layer {
     this.height = height;
     this.speedModifier = speedModifier;
     this.image = image;
+    this.lastBackgroundSwitch = 0;
+    this.backgroundSwitchInterval = 120000; //bg switches every 2 seconds
     this.x = 0;
     this.y = 0;
   }

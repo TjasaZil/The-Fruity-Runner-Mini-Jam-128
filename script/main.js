@@ -16,7 +16,7 @@ window.addEventListener("load", function () {
       this.height = height;
       this.groundMargin = 20;
       this.speed = 0;
-      this.maxSpeed = 3;
+      this.maxSpeed = 5;
       this.background = new Background(this);
       this.player = new Player(this);
       this.input = new InputHandler(this);
@@ -36,7 +36,7 @@ window.addEventListener("load", function () {
       this.lastScoreDecrementTime = 0;
       this.fontColor = "white";
       this.gameOver = false;
-      /* this.backgroundMusic = new Audio("../assets/Music/Title.wav");
+      /*this.backgroundMusic = new Audio("../assets/Music/Title.wav");
       this.backgroundMusic.loop = true;
       this.backgroundMusic.volume = 0.1;
       this.backgroundMusic.play();*/
@@ -128,12 +128,7 @@ window.addEventListener("load", function () {
         // start timer only if speed is greater than 0
         if (this.score > 0) {
           this.score--;
-        } /*else {
-          // game over
-          this.score = 0;
-          this.speed = 0;
-          this.UI.showGameOverScreen();
-        }*/
+        }
       }
     }
     reset() {
@@ -151,6 +146,7 @@ window.addEventListener("load", function () {
       this.player.currentState = this.player.states[0];
       this.player.currentState.enter();
       this.player.x = 0;
+      this.player.speed = 0;
 
       animate(0);
     }
@@ -162,9 +158,18 @@ window.addEventListener("load", function () {
   const animate = (timeStamp) => {
     const deltaTime = timeStamp - lastTime;
     lastTime = timeStamp;
+
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     game.update(deltaTime);
     game.draw(ctx);
+
+    //player speed changes with time
+    game.player.elapsedTime += deltaTime;
+    if (game.player.speed < game.player.maxSpeed)
+      game.player.speed += game.player.speedIncrease * deltaTime;
+    else game.player.speed = game.player.maxSpeed;
+    //console.log("speed" + game.player.speed);
+    //if not game over then animate
     if (!game.gameOver) requestAnimationFrame(animate);
   };
 
