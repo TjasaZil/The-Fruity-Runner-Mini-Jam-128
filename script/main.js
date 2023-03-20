@@ -1,9 +1,9 @@
-import { Player } from "./player.js";
-import { InputHandler } from "./input.js";
-import { Background } from "./background.js";
-import { Bush1, Bush2, Trap } from "./enemies.js";
-import { UI } from "./ui.js";
-import { Broccoli, Strawberry, Pumpkin } from "./food.js";
+import { Player } from "./player/player.js";
+import { InputHandler } from "./input/input.js";
+import { Background } from "./background/background.js";
+import { Bush1, Bush2, Trap } from "./enemies/enemies.js";
+import { UI } from "./ui/ui.js";
+import { Broccoli, Strawberry, Pumpkin } from "./food/food.js";
 
 window.addEventListener("load", function () {
   const canvas = document.getElementById("canvas1");
@@ -38,10 +38,10 @@ window.addEventListener("load", function () {
       this.lastScoreDecrementTime = 0;
       this.fontColor = "white";
       this.gameOver = false;
-      this.backgroundMusic = new Audio("../assets/Music/Title.wav");
+      /* this.backgroundMusic = new Audio("../assets/Music/Title.wav");
       this.backgroundMusic.loop = true;
       this.backgroundMusic.volume = 0.1;
-      this.backgroundMusic.play();
+      this.backgroundMusic.play();*/
       this.UI = new UI(this);
       this.player.currentState = this.player.states[0];
       this.player.currentState.enter();

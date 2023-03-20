@@ -41,9 +41,9 @@ class Running extends State {
     this.game.player.frameY = 3;
   }
   handleInput(input) {
-    if (input.includes("ArrowDown")) {
+    /* if (input.includes("ArrowDown")) {
       this.game.player.setState(states.SITTING, 0);
-    } else if (input.includes("ArrowUp")) {
+    } else*/ if (input.includes("ArrowUp")) {
       this.game.player.setState(states.JUMPING, 1);
     } else if (this.game.gameOver) {
       this.game.player.setState(states.DEAD, 0);

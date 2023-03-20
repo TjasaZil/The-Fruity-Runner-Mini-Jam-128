@@ -5,8 +5,8 @@ import {
   Falling,
   Dead,
   Hit,
-} from "./playerStates.js";
-import { CollisionAnimation } from "./collisionAnimation.js";
+} from "../player-states/playerStates.js";
+import { CollisionAnimation } from "../collision/collisionAnimation.js";
 
 class Player {
   constructor(game) {
