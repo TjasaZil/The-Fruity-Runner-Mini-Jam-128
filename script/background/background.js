@@ -1,136 +1,121 @@
-class Layer {
-  constructor(game, width, height, speedModifier, image) {
-    this.game = game;
-    this.width = width;
-    this.height = height;
-    this.speedModifier = speedModifier;
-    this.image = image;
-    this.x = 0;
-    this.y = 0;
-  }
-  update() {
-    if (this.x < -this.width) this.x = 0;
-    else this.x -= this.game.speed * this.speedModifier;
-  }
-  draw(context) {
-    context.drawImage(this.image, this.x, this.y, this.width, this.height);
-    context.drawImage(
-      this.image,
-      this.x + this.width,
-      this.y,
-      this.width,
-      this.height
-    );
-  }
-}
+import {
+  layerForest1,
+  layerForest2,
+  layerForest3,
+  layerForest4,
+  layerForest5,
+  layerNightForest1,
+  layerNightForest2,
+  layerNightForest3,
+  layerNightForest4,
+  layerNightForest5,
+} from "./background-variables.js";
+
+import { GAME_HEIGHT, GAME_WIDTH } from "../variables.js";
+import { Layer } from "./layer.js";
 
 class Background {
   constructor(game) {
     this.game = game;
-    //this.width = 1667;
-    //this.height = 320;
-    this.width = 1667;
-    this.height = 480;
-    this.layerForest1 = document.getElementById("layer1");
-    this.layerForest2 = document.getElementById("layer2");
-    this.layerForest3 = document.getElementById("layer3");
-    this.layerForest4 = document.getElementById("layer4");
-    this.layerForest5 = document.getElementById("layer5");
-    this.layerNightForest1 = document.getElementById("night-layer1");
-    this.layerNightForest2 = document.getElementById("night-layer2");
-    this.layerNightForest3 = document.getElementById("night-layer3");
-    this.layerNightForest4 = document.getElementById("night-layer4");
-    this.layerNightForest5 = document.getElementById("night-layer5");
-    //this.lastBackgroundSwitch = 0;
-    //this.startInterval = 0;
-    //this.backgroundSwitchInterval = 60; //bg switches every 2 seconds
-    //day layers
-    this.layer1 = new Layer(
-      this.game,
-      this.width,
-      this.height,
-      0.1,
-      this.layerForest1
-    );
-    this.layer2 = new Layer(
-      this.game,
-      this.width,
-      this.height,
-      0.3,
-      this.layerForest2
-    );
-    this.layer3 = new Layer(
-      this.game,
-      this.width,
-      this.height,
-      0.5,
-      this.layerForest3
-    );
-    this.layer4 = new Layer(
-      this.game,
-      this.width,
-      this.height,
-      0.7,
-      this.layerForest4
-    );
-    this.layer5 = new Layer(
-      this.game,
-      this.width,
-      this.height,
-      1,
-      this.layerForest5
-    );
-    //night layer
-    this.nightLayer1 = new Layer(
-      this.game,
-      this.width,
-      this.height,
-      0.1,
-      this.layerNightForest1
-    );
-    this.nightLayer2 = new Layer(
-      this.game,
-      this.width,
-      this.height,
-      0.3,
-      this.layerNightForest2
-    );
-    this.nightLayer3 = new Layer(
-      this.game,
-      this.width,
-      this.height,
-      0.5,
-      this.layerNightForest3
-    );
-    this.nightLayer4 = new Layer(
-      this.game,
-      this.width,
-      this.height,
-      0.7,
-      this.layerNightForest4
-    );
-    this.nightLayer5 = new Layer(
-      this.game,
-      this.width,
-      this.height,
-      1,
-      this.layerNightForest5
-    );
+    this.width = GAME_WIDTH * 2;
+    this.height = GAME_HEIGHT;
+    this.layerForest1 = layerForest1;
+    this.layerForest2 = layerForest2;
+    this.layerForest3 = layerForest3;
+    this.layerForest4 = layerForest4;
+    this.layerForest5 = layerForest5;
+    this.layerNightForest1 = layerNightForest1;
+    this.layerNightForest2 = layerNightForest2;
+    this.layerNightForest3 = layerNightForest3;
+    this.layerNightForest4 = layerNightForest4;
+    this.layerNightForest5 = layerNightForest5;
 
-    //layers array
+    const layers = {
+      layer1: new Layer(
+        this.game,
+        this.width,
+        this.height,
+        0.1,
+        this.layerForest1
+      ),
+      layer2: new Layer(
+        this.game,
+        this.width,
+        this.height,
+        0.3,
+        this.layerForest2
+      ),
+      layer3: new Layer(
+        this.game,
+        this.width,
+        this.height,
+        0.5,
+        this.layerForest3
+      ),
+      layer4: new Layer(
+        this.game,
+        this.width,
+        this.height,
+        0.7,
+        this.layerForest4
+      ),
+      layer5: new Layer(
+        this.game,
+        this.width,
+        this.height,
+        1,
+        this.layerForest5
+      ),
+      nightLayer1: new Layer(
+        this.game,
+        this.width,
+        this.height,
+        0.1,
+        this.layerNightForest1
+      ),
+      nightLayer2: new Layer(
+        this.game,
+        this.width,
+        this.height,
+        0.3,
+        this.layerNightForest2
+      ),
+      nightLayer3: new Layer(
+        this.game,
+        this.width,
+        this.height,
+        0.5,
+        this.layerNightForest3
+      ),
+      nightLayer4: new Layer(
+        this.game,
+        this.width,
+        this.height,
+        0.7,
+        this.layerNightForest4
+      ),
+      nightLayer5: new Layer(
+        this.game,
+        this.width,
+        this.height,
+        1,
+        this.layerNightForest5
+      ),
+    };
+
     this.backgroundLayers = [
-      this.layer1,
-      this.layer2,
-      this.layer3,
-      this.layer4,
-      this.layer5,
+      layers.layer1,
+      layers.layer2,
+      layers.layer3,
+      layers.layer4,
+      layers.layer5,
     ];
     this.backgroundNightLayers = [
-      this.nightLayer1,
-      this.nightLayer2,
-      this.nightLayer3,
-      this.nightLayer4,
-      this.nightLayer5,
+      layers.nightLayer1,
+      layers.nightLayer2,
+      layers.nightLayer3,
+      layers.nightLayer4,
+      layers.nightLayer5,
     ];
   }
   update() {
@@ -154,14 +139,6 @@ class Background {
         layer.draw(context);
       });
     }
-  } /*
-  timeTick() {
-    this.startInterval++;
-    if (this.startInterval > this.backgroundSwitchInterval) {
-      this.startInterval = 0;
-      this.lastBackgroundSwitch++;
-    }
-    //console.log(this.startInterval);
-  }*/
+  }
 }
-export { Background };
+export { Background, Layer };

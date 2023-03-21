@@ -4,19 +4,20 @@ import { Background } from "./background/background.js";
 import { Bush1, Bush2, Trap } from "./enemies/enemies.js";
 import { UI } from "./ui/ui.js";
 import { Broccoli, Strawberry, Pumpkin } from "./food/food.js";
+import { GAME_HEIGHT, GAME_WIDTH } from "./variables.js";
 
 window.addEventListener("load", function () {
   const canvas = document.getElementById("canvas1");
   const ctx = canvas.getContext("2d");
-  canvas.width = 720;
-  canvas.height = 480;
+  canvas.width = GAME_WIDTH;
+  canvas.height = GAME_HEIGHT;
   //canvas.width = window.innerWidth;
   //canvas.height = window.innerHeight;
   class Game {
     constructor(width, height) {
       this.width = width;
       this.height = height;
-      this.groundMargin = 30;
+      this.groundMargin = 42;
       this.speed = 0;
       this.maxSpeed = 5;
       this.background = new Background(this);
