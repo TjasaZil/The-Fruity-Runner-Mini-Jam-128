@@ -132,11 +132,9 @@ window.addEventListener("load", function () {
       console.log(this.foods);
     }
     decreaseScore() {
-      if (this.speed > 0) {
+      if (this.speed > 0 && this.score > 0) {
         // start timer only if speed is greater than 0
-        if (this.score > 0) {
-          this.score--;
-        }
+        this.score--;
       }
     }
     timeTick() {

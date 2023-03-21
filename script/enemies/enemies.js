@@ -53,15 +53,7 @@ class Enemy {
         this.height
       );
     }
-  } /*
-  timeTick() {
-    this.startInterval++;
-    if (this.startInterval > this.backgroundSwitchInterval) {
-      this.startInterval = 0;
-      this.lastBackgroundSwitch++;
-      console.log(this.lastBackgroundSwitch);
-    }
-  }*/
+  }
 }
 class Bush1 extends Enemy {
   constructor(game) {
